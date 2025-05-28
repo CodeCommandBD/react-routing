@@ -9,28 +9,36 @@ import App from './App';
 import Contact from './page/Contact';
 import About from './page/About';
 import Product from './page/Product';
+import Error from './page/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>,
+    element: <App></App>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/product",
+        element: <Product></Product>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "*",
+        element: <Error></Error>,
+      },
+    ]
   },
-  {
-    path: "/contact",
-    element: <Contact></Contact>,
-  },
-  {
-    path: "/product",
-    element: <Product></Product>,
-  },
-  {
-    path: "/about",
-    element: <About></About>,
-  },
-  {
-    path: "*",
-    element: <Error></Error>,
-  },
+
 ]);
 
 const root = document.getElementById("root");
