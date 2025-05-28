@@ -2,23 +2,27 @@ import React, { useState } from 'react'
 
 const SignIn = () => {
 
-    let [form, setForm] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-
-    const emailHandle = () => {
-
+    const emailHandle = (e) => {
+        setEmail(e.target.value)
     }
-    const passHandle = () => {
-
+    const passHandle = (e) => {
+        setPassword(e.target.value)
     }
 
     const submitHandle =(e) => {
         e.preventDefault()
+        console.log(email);
+        console.log(password);
+        
     }
 
 
   return (
     <div>
+        <h1>Sign In</h1>
         <form onSubmit={submitHandle}>
             <input onChange={emailHandle} type="email" placeholder='enter your email'/>
             <input onChange={passHandle} type="password" placeholder='password' />

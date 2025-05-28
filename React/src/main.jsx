@@ -11,6 +11,7 @@ import About from './page/About';
 import Product from './page/Product';
 import Error from './page/Error';
 import './index.css'
+import SignIn from './page/SignIn';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/signin",
+        element: <SignIn></SignIn>,
       },
       {
         path: "*",
