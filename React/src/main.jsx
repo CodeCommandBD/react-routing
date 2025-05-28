@@ -10,7 +10,7 @@ import Contact from './page/Contact';
 import About from './page/About';
 import Product from './page/Product';
 import Error from './page/Error';
-
+import './index.css'
 const router = createBrowserRouter([
   {
     path: "/",
