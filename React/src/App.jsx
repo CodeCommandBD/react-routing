@@ -1,16 +1,11 @@
-import Contact from "./page/Contact"
-import Home from "./page/Home"
-import Product from "./page/Product"
+import Navbar from "./Components/Navbar"
 
 function App() {
 
 
   return (
     <>
-     <Home></Home>
-     <Contact></Contact>
-     <Product></Product>
-     <About></About>
+     <Navbar></Navbar>
     </>
   )
 }
