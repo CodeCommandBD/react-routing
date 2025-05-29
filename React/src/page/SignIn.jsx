@@ -17,8 +17,13 @@ const SignIn = () => {
 
     const submitHandle =(e) => {
         e.preventDefault()
+        const user= {
+            name: 'shantokumar',
+            email:'shantokumar@gmail.com',
+            address:'Dhaka'
+        }
         if(email === 'shantokumar@gmail.com' && password === '123'){
-            navigate('/profile')
+            navigate('/profile', {state: user})
         }else{
             alert('email or password invalid')
         }
