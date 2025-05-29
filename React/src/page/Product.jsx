@@ -34,8 +34,9 @@ const Product = () => {
       <div className='grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-4'>
         {
           products && products.length > 0 && products.map((product) => {
-            const { id, title, category, price, description } = product
+            const { id,images, title, category, price, description } = product
             return <div key={id} className='text-start bg-emerald-800 rounded-md p-3.5 text-white'>
+              <img className='w-full object-cover' src={images} alt="" />
               <h3 className='text-xl mb-3'> {title}</h3>
               <h3>Category: {category}</h3>
               <h3>Price: {price}</h3>
