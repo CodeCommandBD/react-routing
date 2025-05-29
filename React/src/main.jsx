@@ -12,6 +12,7 @@ import Product from './page/Product';
 import Error from './page/Error';
 import './index.css'
 import SignIn from './page/SignIn';
+import UserProfile from './page/UserProfile';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/signin",
         element: <SignIn></SignIn>,
+      },
+      {
+        path: "/profile",
+        element: <UserProfile></UserProfile>,
       },
       {
         path: "*",
