@@ -12,8 +12,15 @@ import Product from './page/Product';
 import Error from './page/Error';
 import './index.css'
 import SignIn from './page/SignIn';
-import UserProfile from './page/UserProfile';
 import ProductDetails from './page/ProductDetails';
+import UserProfile from './Components/Users/UserProfile';
+import UserOrder from './Components/Users/UserOrder';
+import ProtectedRoute from './Routes/ProtectedRoute';
+import AdminRoute from './Routes/AdminRoute';
+import AdminProfile from './Components/Admin/AdminProfile';
+import AdminProducts from './Components/Admin/AdminProducts';
+import AdminCategories from './Components/Admin/AdminCategories';
+import AdminManageUser from './Components/Admin/AdminManageUser';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,7 +29,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Product></Product>,
       },
       {
         path: "/contact",
@@ -45,13 +52,43 @@ const router = createBrowserRouter([
         element: <SignIn></SignIn>,
       },
       {
-        path: "/profile",
-        element: <UserProfile></UserProfile>,
+        path: "/dashboard/user",
+        element: <ProtectedRoute></ProtectedRoute>,
+        children:[
+          {
+            path:'profile',
+            element: <UserProfile></UserProfile>
+          },
+          {
+            path:'order',
+            element: <UserOrder></UserOrder>
+          }
+        ]
       },
-      // {
-      //   path: "*",
-      //   element: <Error></Error>,
-      // },
+      {
+        path: "/dashboard/admin",
+        element: <AdminRoute></AdminRoute>,
+        children:[
+          {
+            path:'profile',
+            element: <AdminProfile></AdminProfile>
+          },
+          {
+            path:'products',
+            element: <AdminProducts></AdminProducts>
+          },
+          {
+            path:'category',
+            element: <AdminCategories></AdminCategories>
+          },
+          {
+            path:'users',
+            element: <AdminManageUser></AdminManageUser>
+          },
+        ]
+      },
+      
+      
     ]
   },
 

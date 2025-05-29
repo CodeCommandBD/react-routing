@@ -23,7 +23,7 @@ const SignIn = () => {
             address:'Dhaka'
         }
         if(email === 'shantokumar@gmail.com' && password === '123'){
-            navigate('/profile', {state: user})
+            navigate('/dashboard/user/profile', {state: user})
         }else{
             alert('email or password invalid')
         }
