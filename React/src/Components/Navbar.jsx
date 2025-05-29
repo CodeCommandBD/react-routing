@@ -2,6 +2,9 @@ import React from 'react'
 import { NavLink, Outlet } from 'react-router'
 
 const Navbar = () => {
+
+  
+
   return (
     <div>
         <nav className='flex justify-between px-10 py-6 bg-emerald-400'>
