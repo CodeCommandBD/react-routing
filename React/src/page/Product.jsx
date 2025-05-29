@@ -28,18 +28,18 @@ const Product = () => {
   
 
   return (
-    <div>
-      <h1 className='text-3xl font-bold'>All The Products</h1>
+    <div className='text-center my-10 px-8'>
+      <h1 className='text-3xl font-bold mb-8'>All The Products</h1>
       {isLoading && <p>Products are loading...</p>}
-      <div>
+      <div className='grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-4'>
         {
           products && products.length > 0 && products.map((product) => {
             const { id, title, category, price, description } = product
-            return <div key={id}>
-              <h3>Title: {title}</h3>
+            return <div key={id} className='text-start bg-emerald-800 rounded-md p-3.5 text-white'>
+              <h3 className='text-xl mb-3'> {title}</h3>
               <h3>Category: {category}</h3>
               <h3>Price: {price}</h3>
-              <p>Des: {description && description.substring(0, 100)}...</p>
+              <p className='my-3.5'>{description && description.substring(0, 50)}...</p>
               <Link to={`/product/${id}`} state={product} className='border p-1 rounded-md cursor-pointer' type='button'>Show Details</Link>
             </div>
           })
