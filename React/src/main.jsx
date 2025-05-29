@@ -13,6 +13,7 @@ import Error from './page/Error';
 import './index.css'
 import SignIn from './page/SignIn';
 import UserProfile from './page/UserProfile';
+import ProductDetails from './page/ProductDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/product",
         element: <Product></Product>,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductDetails></ProductDetails>,
       },
       {
         path: "/about",

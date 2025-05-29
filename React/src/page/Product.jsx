@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router';
 
 const Product = () => {
 
@@ -24,6 +25,7 @@ const Product = () => {
     })();
   }, []);
 
+  
 
   return (
     <div>
@@ -31,13 +33,14 @@ const Product = () => {
       {isLoading && <p>Products are loading...</p>}
       <div>
         {
-          products && products.length > 0 && products.map((product, i) => {
+          products && products.length > 0 && products.map((product) => {
             const { id, title, category, price, description } = product
             return <div key={id}>
               <h3>Title: {title}</h3>
               <h3>Category: {category}</h3>
               <h3>Price: {price}</h3>
               <p>Des: {description && description.substring(0, 100)}...</p>
+              <Link to={`/product/${id}`} state={product} className='border p-1 rounded-md cursor-pointer' type='button'>Show Details</Link>
             </div>
           })
         }
